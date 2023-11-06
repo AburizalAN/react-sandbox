@@ -1,6 +1,7 @@
 import * as React from "react"
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import TestFormComponent from "./components/TestFormComponent"
 
 const Home = () => {
   const [count, setCount] = React.useState(0)
@@ -26,6 +27,11 @@ const Home = () => {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <form>
+        <div>Test Input</div>
+        <input name="email" />
+        <TestFormComponent />
+      </form>
     </>
   )
 }
