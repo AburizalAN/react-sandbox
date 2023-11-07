@@ -19,7 +19,7 @@ const Navbar = styled.nav`
 `;
 
 const Content = styled.div`
-  padding: 16px 0;
+  padding: 16px 12px;
 `
 
 const PageTitle = styled.div`
@@ -80,6 +80,7 @@ const ProductItemWrapper = styled.div`
           border: none;
           border-radius: 4px;
           color: white;
+          cursor: pointer;
         }
         .amount {
           width: 40px;
