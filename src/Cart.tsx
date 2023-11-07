@@ -20,7 +20,7 @@ const Navbar = styled.nav`
 
 const Content = styled.div`
   padding: 16px 12px;
-`
+`;
 
 const PageTitle = styled.div`
   font-weight: 700;
@@ -42,7 +42,7 @@ const CartIcon = styled.div`
   &:hover {
     background-color: #ececec;
   }
-`
+`;
 
 const ProductItemWrapper = styled.div`
   border: 1px solid #f1f1f1;
