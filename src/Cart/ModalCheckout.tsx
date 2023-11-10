@@ -26,8 +26,6 @@ const ModalCheckout = ({ children, data }: Props) => {
     0
   );
 
-  console.log("list Checkout", listCheckout);
-
   return (
     <>
       {children(modalProps)}

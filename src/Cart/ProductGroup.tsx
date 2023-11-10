@@ -11,38 +11,38 @@ interface Props {
 
 const ProductGroup = ({ cart, setData, cartIndex }: Props) => {
 
-  const deleteItem = (productId?: number) => {
-    const filteredData = [];
-    for (const product of cart.products) {
-      if (product.id !== productId) {
-        filteredData.push(product)
-      }
-    }
-    cart.products = filteredData;
-    setData((carts: any) => {
-      let cartIndex: number = -1;
-      for (let i = 0; i < carts.length; i++) {
-        if (carts[i].id === cart.id) {
-          cartIndex = i;
-          break;
-        }
-      }
-      carts[cartIndex] = cart;
-      return [...carts];
-    })
-  }
-
   // const deleteItem = (productId?: number) => {
-  //   const filteredData = cart.products.filter(
-  //     (product: any) => product.id !== productId
-  //   );
+  //   const filteredData = [];
+  //   for (const product of cart.products) {
+  //     if (product.id !== productId) {
+  //       filteredData.push(product)
+  //     }
+  //   }
   //   cart.products = filteredData;
   //   setData((carts: any) => {
-  //     const cartIndex = carts.findIndex((item: any) => item.id === cart.id);
+  //     let cartIndex: number = -1;
+  //     for (let i = 0; i < carts.length; i++) {
+  //       if (carts[i].id === cart.id) {
+  //         cartIndex = i;
+  //         break;
+  //       }
+  //     }
   //     carts[cartIndex] = cart;
   //     return [...carts];
-  //   });
-  // };
+  //   })
+  // }
+
+  const deleteItem = (productId?: number) => {
+    const filteredData = cart.products.filter(
+      (product: any) => product.id !== productId
+    );
+    cart.products = filteredData;
+    setData((carts: any) => {
+      const cartIndex = carts.findIndex((item: any) => item.id === cart.id);
+      carts[cartIndex] = cart;
+      return [...carts];
+    });
+  };
 
   // const improvedDeleteItem = (index: number) => {
   //   cart.products.splice(index, 1);
