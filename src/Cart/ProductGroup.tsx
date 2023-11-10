@@ -60,10 +60,19 @@ const ProductGroup = ({ cart, setData, cartIndex }: Props) => {
     })
   };
 
+  const changeCount = (idProduct: number, count: number) => {
+    setData((carts: any) => {
+      const cartIndex = carts.findIndex((item: any) => item.id === cart.id);
+      const productIndex = carts[cartIndex].products.findIndex((item: any) => item.id === idProduct);
+      carts[cartIndex].products[productIndex].qty = count;
+      return [...carts];
+    })
+  }
+
   const subTotal =
     cart?.products?.length > 0
       ? cart?.products?.reduce(
-          (total: any, value: any) => total + value?.price ?? 0,
+          (total: any, value: any) => total + value.price * value.qty ?? 0,
           0
         )
       : 0;
@@ -76,6 +85,7 @@ const ProductGroup = ({ cart, setData, cartIndex }: Props) => {
             key={i}
             data={product}
             deleteItem={deleteItem}
+            changeCount={changeCount}
             // deleteItem={() => improvedDeleteItem(i)}
           />
         ))}

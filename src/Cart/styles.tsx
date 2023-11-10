@@ -40,8 +40,9 @@ export const CartIcon = styled.div`
   }
 `;
 
-export const ProductItemWrapper = styled.div`
-  border: 1px solid #f1f1f1;
+export const ProductItemWrapper = styled.div<{ emptyStock: boolean }>`
+  border: ${({ emptyStock }) => `1px solid ${emptyStock ? "#EF9595" : "#f1f1f1"}`};
+  background-color: ${({ emptyStock }) => emptyStock ? "#fff5f5" : "white"};
   border-radius: 8px;
   padding: 8px;
   .product {
@@ -164,4 +165,15 @@ export const ShippingItem = styled.div`
   &:hover {
     background-color: #f4f4f4;
   }
+`;
+
+export const CartAlert = styled.div`
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #EF9595;
+  background-color: #ffbfbf;
+  color: #8d1818;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
 `;

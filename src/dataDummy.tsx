@@ -14,6 +14,7 @@ const carts = [
           "count": 120
         },
         "qty": 4,
+        "stock": 0,
       },
       {
         "id": 2,
@@ -27,6 +28,7 @@ const carts = [
           "count": 259
         },
         "qty": 1,
+        "stock": 10,
       },
       {
         "id": 3,
@@ -40,6 +42,7 @@ const carts = [
           "count": 500
         },
         "qty": 6,
+        "stock": 100,
       }
     ]
   },
@@ -58,6 +61,7 @@ const carts = [
           "count": 259
         },
         "qty": 4,
+        "stock": 10,
       },  
       {
         "id": 1,
@@ -71,6 +75,7 @@ const carts = [
           "count": 120
         },
         "qty": 10,
+        "stock": 10,
       },
       {
         "id": 5,
@@ -83,7 +88,8 @@ const carts = [
           "rate": 4.6,
           "count": 400
         },
-        "qty": 2
+        "qty": 2,
+        "stock": 10,
       }
     ]
   },
@@ -102,6 +108,7 @@ const carts = [
           "count": 120
         },
         "qty": 2,
+        "stock": 10,
       },
       {
         "id": 9,
@@ -115,6 +122,7 @@ const carts = [
           "count": 203
         },
         "qty": 1,
+        "stock": 10,
       }
     ]
   }

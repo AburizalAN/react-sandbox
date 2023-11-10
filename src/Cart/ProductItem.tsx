@@ -2,17 +2,23 @@ import * as React from "react";
 import { MdDeleteForever } from "react-icons/md";
 import { ProductItemWrapper } from "./styles";
 
+interface Props {
+  data: any;
+  deleteItem: (idProduct?: number) => void;
+  changeCount: (idProduct: number, count: number) => void;
+}
+
 const ProductItem = ({
   data,
   deleteItem,
-}: {
-  data: any;
-  deleteItem: (idProduct?: number) => void;
-}) => {
-  const [count, setCount] = React.useState(1);
+  changeCount,
+}: Props) => {
+
+  const quantity = data?.qty ?? 1;
+  const totalPrice = data?.price * data?.qty;
 
   return (
-    <ProductItemWrapper>
+    <ProductItemWrapper emptyStock={data?.stock <= 0}>
       <div className="product">
         <div className="image">
           <img src={data?.image} alt={data?.title} />
@@ -23,20 +29,20 @@ const ProductItem = ({
             {new Intl.NumberFormat("en-US", {
               style: "currency",
               currency: "USD",
-            }).format(data?.price)}
+            }).format(totalPrice)}
           </div>
           <div className="actions">
             <div className="counter">
               <button
                 className="btn-counter"
-                onClick={() => setCount(count > 1 ? count - 1 : 1)}
+                onClick={() => changeCount(data.id, quantity > 1 ? quantity - 1 : 1)}
               >
                 -
               </button>
-              <input disabled className="amount" value={count} />
+              <input disabled className="amount" value={quantity ?? 1} />
               <button
                 className="btn-counter"
-                onClick={() => setCount(count + 1)}
+                onClick={() => changeCount(data.id, quantity + 1)}
               >
                 +
               </button>

@@ -8,13 +8,19 @@ import {
   CartIcon,
   Content,
   ProductsContainer,
+  CartAlert,
 } from "./styles";
 import carts from "../dataDummy";
 
 const Cart = () => {
   const [data, setData] = React.useState<any>(carts);
 
-  console.log("data", data);
+  const checkEmptyStock = data.some((cart: any) => {
+    const checkCart = cart.products.some((product: any) => {
+      return product.stock === 0;
+    })
+    return checkCart;
+  })
 
   return (
     <ViewContainer>
@@ -26,6 +32,9 @@ const Cart = () => {
       </Navbar>
       <Content>
         <ProductsContainer>
+          {checkEmptyStock ? (
+            <CartAlert>Ada Stock Product yang kosong</CartAlert>
+          ) : null}
           {data && data.length > 0 ? (
             data.map((item: any, i: number) => (
               <ProductGroup key={i} cart={item} setData={setData} cartIndex={i}  />
