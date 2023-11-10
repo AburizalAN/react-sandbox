@@ -4,6 +4,8 @@ export const ViewContainer = styled.div`
   max-width: 500px;
   height: 100vh;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Navbar = styled.nav`
@@ -16,6 +18,8 @@ export const Navbar = styled.nav`
 
 export const Content = styled.div`
   padding: 16px 12px;
+  flex: 1;
+  overflow: auto;
 `;
 
 export const PageTitle = styled.div`
@@ -176,4 +180,61 @@ export const CartAlert = styled.div`
   font-size: 12px;
   font-weight: 600;
   line-height: 1;
+`;
+
+export const Footer = styled.div`
+  padding: 12px;
+  border-top: 1px solid #eaeaea;
+  .button-checkout {
+    padding: 12px;
+    background-color: #9FBB73;
+    color: white;
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+    &:hover {
+      background-color: #7c9752;
+    }
+  }
+`;
+
+export const CheckoutList = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const CheckkoutItem = styled.div`
+  padding: 12px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  .title {
+    flex: 1;
+    margin-right: 50px;
+  }
+  .price {
+    font-weight: bold;
+  }
+  &:hover {
+    background-color: #eaeaea;
+  }
+`;
+
+export const TotalCheckout = styled.div`
+  display: flex;
+  margin-top: 30px;
+  justify-content: right;
+  padding: 12px 12px;
+  color: #7b7b7b;
+  border-top: 1px solid #eaeaea;
+  .title {
+    margin-right: 80px;
+  }
+  .price {
+    font-weight: bold;
+    color: #484848;
+  }
 `;

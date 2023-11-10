@@ -1,6 +1,7 @@
 import * as React from "react";
 import { BsCartPlus } from "react-icons/bs";
 import ProductGroup from "./ProductGroup";
+import ModalCheckout from "./ModalCheckout";
 import {
   ViewContainer,
   Navbar,
@@ -9,6 +10,7 @@ import {
   Content,
   ProductsContainer,
   CartAlert,
+  Footer,
 } from "./styles";
 import carts from "../dataDummy";
 
@@ -44,6 +46,15 @@ const Cart = () => {
           )}
         </ProductsContainer>
       </Content>
+      <Footer>
+        <ModalCheckout data={data}>
+          {({ openModal }) => (
+            <button onClick={openModal} className="button-checkout">
+              Checkout
+            </button>
+          )}
+        </ModalCheckout>
+      </Footer>
     </ViewContainer>
   );
 };
