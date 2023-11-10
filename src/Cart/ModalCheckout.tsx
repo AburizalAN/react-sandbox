@@ -35,6 +35,7 @@ const ModalCheckout = ({ children, data }: Props) => {
         visible={isOpen}
         onCancel={() => setIsOpen(false)}
         title="Checkout"
+        centerPosition
       >
         <CheckoutList>
           {listCheckout.map((product: any, i: number) => (
