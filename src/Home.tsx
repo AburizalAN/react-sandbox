@@ -2,8 +2,10 @@ import * as React from "react"
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import TestFormComponent from "./components/TestFormComponent"
+import { useNavigate } from "react-router-dom"
 
 const Home = () => {
+  const navigate = useNavigate()
   const [count, setCount] = React.useState(0)
   return (
     <>
@@ -32,6 +34,7 @@ const Home = () => {
         <input name="email" />
         <TestFormComponent />
       </form>
+      <button onClick={() => navigate("/cart")}>Go to Cart</button>
     </>
   )
 }
