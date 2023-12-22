@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 const path = require("path");
-
 /* eslint-disable no-undef */
 const express = require('express');
 
