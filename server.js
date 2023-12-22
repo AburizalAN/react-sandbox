@@ -12,8 +12,6 @@ const app = express();
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('dist'));
 
-console.log("__dirname", __dirname);
-
 // http://expressjs.com/en/starter/basic-routing.html
 app.get('/*', (request, response) => {
   response.sendFile(path.resolve(__dirname, 'dist/index.html'));
